@@ -1,0 +1,222 @@
+/* =========================
+   NAVBAR BASE (UI/UX PURPLE THEME)
+========================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 6%;
+
+  /* 🌑 DARK PREMIUM BACKGROUND */
+  background: rgba(11, 11, 16, 0.75);
+  backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  z-index: 1000;
+}
+
+/* =========================
+   LEFT (LOGO)
+========================= */
+
+.nav-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* 🌟 PREMIUM LOGO HOVER EFFECT */
+.logo-icon,
+.logo-text {
+  transition: all 0.4s ease;
+}
+
+.logo-section:hover .logo-icon {
+  color: #a855f7;
+  transform: rotate(10deg) scale(1.1);
+  filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.8));
+}
+
+.logo-section:hover .logo-text {
+  color: #a855f7;
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+}
+
+.logo-icon {
+  font-size: 22px;
+  color: #a855f7; /* PURPLE ACCENT */
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* =========================
+   CENTER LINKS
+========================= */
+
+.nav-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-center a {
+  color: #a1a1aa;
+  text-decoration: none;
+  font-size: 15px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* hover = purple glow */
+.nav-center a:hover {
+  color: #a855f7;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+.nav-center a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #a855f7, #9333ea);
+  transition: 0.3s;
+}
+
+.nav-center a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.nav-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+/* CONTACT BUTTON (PURPLE STYLE) */
+.nav-contact-btn {
+  padding: 9px 16px;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #a855f7, #9333ea);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+/* hover glow */
+.nav-contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  color: #a1a1aa;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #a855f7;
+  transform: translateY(-3px);
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.6));
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .nav-center {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: center;
+
+    background: rgba(11, 11, 16, 0.95);
+    backdrop-filter: blur(20px);
+
+    padding: 20px 0;
+
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+  }
+
+  .nav-center.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-right {
+    gap: 10px;
+  }
+
+  .social-icons {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 16px;
+  }
+
+  .nav-contact-btn {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+}
